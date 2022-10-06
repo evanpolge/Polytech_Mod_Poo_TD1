@@ -38,7 +38,7 @@ rct::rct(const pt p1, const pt p2)
 
 // L'opérateur d'affectation implicite et le constructeur de copie implicite
 // conviennent. On ne les code pas explicitement.
-rct::rct(const rct &r2)
+rct::rct(const rct& r2)
     : pC(r2.getCenterPt())
     , w(r2.getWidth())
     , h(r2.getHeight())
@@ -115,8 +115,7 @@ const pt rct::bottomRight(void) const
 // Egalité de deux rectangles
 bool rct::operator==(const rct &r2) const
 {
-    return EPSEQUAL(this->w, r2.w) && EPSEQUAL(this->h, r2.h) &&
-           EPSEQUAL(this->pC.getX(), r2.pC.getX()) && EPSEQUAL(this->pC.getY(), r2.pC.getY());
+    return (EPSEQUAL(this->w, r2.w) && EPSEQUAL(this->h, r2.h) && (this->pC == r2.pC));
 }
 
 // Renvoie vrai ssi le point argument est contenu dans le rectangle

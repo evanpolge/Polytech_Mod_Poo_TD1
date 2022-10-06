@@ -87,5 +87,3 @@ inline void pt::setX(double x_)
 
 inline void pt::setY(double y_)          
 { this->y = y_ ; };
-
-
